@@ -34,7 +34,7 @@ export default (props: IndexPageProps) =>
     {/* About this starter */}
     <Segment vertical className="stripe">
       <Container text textAlign="center">
-        <Header as="h2">What we do<br/><br/></Header>
+        <Header as="h1">What we do<br/><br/></Header>
       </Container>
       
       <Grid stackable verticalAlign="middle" className="container">
@@ -70,6 +70,29 @@ export default (props: IndexPageProps) =>
                 Provide teacher training materials, maintain an online community of current 
                 and former teachers and students, and host an annual CSbyUs summit
               </p>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+
+    {/* Our model */}
+    <Segment>
+      <Container text>
+        <Header as="h1" textAlign="center" style={{padding: "16px"}}>
+          Our Model
+        </Header>
+      </Container>
+      <Grid stackable verticalAlign="middle" className="container">
+        <Grid.Row>
+          <Grid.Column width="8">
+            <p>
+              CSbyUs combines a personalized learning model with the power of 
+              21st century information technology to expand access to high-impact 
+              computer science education and close the diversity gap in STEM fields. 
+              CSbyUs supports networks of undergraduate students to customize existing 
+              open-access CS curricula to meet the needs of local learning communities and 
+              deploy their new open-source curricula in middle and high schools and after school programs.
+            </p>
           </Grid.Column>
         </Grid.Row>
       </Grid>
