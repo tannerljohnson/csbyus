@@ -24,6 +24,7 @@
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "dependencies": {
+    "@slack/client": "^4.3.1",
     "@types/lodash": "^4.14.63",
     "@types/react": "^16.0.20",
     "@types/react-dom": "^16.0.2",
@@ -33,8 +34,10 @@
     "@types/react-router-dom": "^4.0.8",
     "babel-eslint": "^7.2.1",
     "change-case": "^3.0.1",
-    "codeclimate-test-reporter": "^0.4.1",
+    "codeclimate-test-reporter": "^0.5.0",
     "disqus-react": "^1.0.5",
+    "file-loader": "^1.1.11",
+    "fs": "0.0.1-security",
     "gatsby": "latest",
     "gatsby-link": "latest",
     "gatsby-plugin-glamor": "latest",
@@ -53,16 +56,23 @@
     "gatsby-transformer-sharp": "latest",
     "graphql-code-generator": "^0.5.2",
     "gray-matter": "^2.1.1",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
+    "net": "^1.0.2",
     "react": "^16.0.0",
+    "react-confirm-alert": "^2.0.4",
     "react-dom": "^16.0.0",
     "react-helmet": "5.0.3",
+    "react-native": "^0.55.4",
     "react-redux": "^5.0.6",
     "redux-devtools-extension": "^2.13.2",
     "semantic-ui-react": "^0.74.2",
+    "slack-incoming-webhook": "^1.1.0",
     "slash": "1.0.0",
+    "superagent": "^3.8.3",
+    "tls": "0.0.1",
     "ts-loader": "^2.3.7",
-    "typescript": "2.5.3"
+    "typescript": "2.5.3",
+    "url-loader": "^1.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
@@ -80,8 +90,8 @@
     "@types/storybook__addon-options": "^3.2.0",
     "@types/storybook__react": "^3.0.5",
     "@types/webpack-env": "^1.13.1",
-    "enzyme": "^3.0.0",
-    "enzyme-adapter-react-16": "^1.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-xo-react": "0.11.1",
     "eslint-plugin-react": "6.10.3",
     "flat": "^2.0.1",
@@ -100,7 +110,7 @@
     "stylelint-config-standard": "^16.0.0",
     "ts-jest": "19.0.8",
     "ts-lint": "4.5.1",
-    "xo": "^0.18.1"
+    "xo": "^0.21.1"
   },
   "keywords": [
     "gatsby",

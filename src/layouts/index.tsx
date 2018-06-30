@@ -13,7 +13,7 @@ import { store } from "../store";
 // TODO: change paths once pages created. Currently all point to old pages for test
 export const menuItems = [
   { name: "Home", path: "/", exact: true, icon: "home", inverted: true },
-  { name: "About", path: "/about/", exact: true, icon: "info circle" },
+  { name: "About", path: "/about-extended/", exact: true, icon: "info circle" },
   { name: "Community", path: "/blog/", exact: false, icon: "newspaper" },
   { name: "Contact", path: "/contact/", exact: true, icon: "phone" },
 ];

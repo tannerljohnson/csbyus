@@ -2,7 +2,11 @@ import * as React from "react";
 import Link from "gatsby-link";
 import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
 import { menuItems } from "../layouts";
-// import ExampleImageLink from "../../assets/images/ExampleImage";
+import * as Blog from './blog.tsx';
+// import ReactNative,{
+//   Alert,
+// } from 'react-native';
+import {ExampleImage, AriaImage, TannerImage, AmyImage, CarterImage, BackgroundImage} from "./ExampleImage.jsx";
 import {
   Button,
   Segment,
@@ -20,7 +24,31 @@ interface IndexPageProps {
   };
 }
 
+function handleClick(e) {
+  e.preventDefault();
+  // alert('The link was clicked.');
+  window.location.href = './contact'; 
+  // menuItems[3].dispatch;
+}
+
 const OurModelFlowChartImage = () => <Image src='/assets/images/OurModelFlowChartDiagram.png'/>
+
+// Carter links
+const handleClickCarterIn = () => open('https://www.linkedin.com/in/carterzenke/');
+const handleClickCarterWeb = () => open('http://www.carterzenke.com/');
+
+// Tanner links
+const handleClickTannerIn = () => open('https://www.linkedin.com/in/tanner-johnson-4ba701b8/');
+
+// Amy links
+const handleClickAmyIn = () => open('https://www.linkedin.com/in/gobluedevils/');
+
+// Aria links
+const handleClickAriaIn = () => open('https://www.linkedin.com/in/aria-chernik-512065a8/');
+const handleClickAriaTwitter = () => open('https://twitter.com/ariachernik');
+const handleClickAriaWeb = () => open('http://ariachernik.com/');
+
+
 
 export default (props: IndexPageProps) =>
   <div>
@@ -29,13 +57,22 @@ export default (props: IndexPageProps) =>
       <HeaderMenu
         Link={Link} pathname={props.location.pathname} items={menuItems} inverted
       />
-      <Container text>
-        <Header inverted as="h1">CSbyUs</Header>
-        <Header inverted as="h2">Expanding access to quality computer science education <br/>by students, for students</Header>
-        <Button primary size="huge">Get started!</Button>
+      <Container fluid>
+        <BackgroundImage/>
+        <div style={{position: 'absolute', bottom: 120, width: '100%', height: 'auto'}}>
+          <Container text>
+            <Header inverted as="h1">CSby<b>Us</b></Header>
+            <Header inverted as="h2">Expanding access to quality computer science education <br/>by students, for students</Header>
+            <Button primary size="huge"
+                    href="./contact"
+                    onClick={handleClick}>
+              Get involved! 
+            </Button>
+          </Container>
+        </div>
       </Container>
     </Segment>
-
+ 
     {/* About this starter */}
     <Segment vertical className="stripe">
       <Container text textAlign="center">
@@ -95,7 +132,7 @@ export default (props: IndexPageProps) =>
       </Container>
       <Grid stackable verticalAlign="top" className="container">
         <Grid.Row>
-          <Grid.Column width="8">
+          <Grid.Column width="8" center textAlign="center">
             <p>
               CSbyUs combines a personalized learning model with the power of 
               21st century information technology to expand access to high-impact 
@@ -106,14 +143,25 @@ export default (props: IndexPageProps) =>
             </p>
           </Grid.Column>
           <Grid.Column width="8" floated="right" textAlign="center">
-            <p>Key values:</p>
-            <List bulleted>
-              <List.Item>Student-centered</List.Item>
-              <List.Item>Community-embedded</List.Item>
-              <List.Item>Project-based</List.Item>
-              <List.Item>Informed by design thinking</List.Item>
-              <List.Item>By students, for students</List.Item>
-            </List>
+            <ExampleImage />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+
+    {/* Impact */}
+    <Segment vertical className="stripe">
+      <Container text>
+        <Header as="h1" textAlign="center">
+          Impact <br/><br/>
+        </Header>
+      </Container>
+      <Grid stackable verticalAlign="top" className="container">
+        <Grid.Row>
+          <Grid.Column width="full">
+            <p>
+              [Here is some persuasive information about our impact so far.]
+            </p>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -128,10 +176,12 @@ export default (props: IndexPageProps) =>
       </Container>
       <Grid columns="4" textAlign="center" divided relaxed stackable className="container" style={{color: "gray"}}>
         <Grid.Row>
-          <Grid.Column>
-            <Header icon>
-              <Icon name="user"></Icon>
-              <font size="4"><a href="https://www.linkedin.com/in/aria-chernik-512065a8/">Aria Chernik, JD, PhD</a></font>
+          <Grid.Column >
+            <div>
+              <AriaImage />
+            </div>
+            <Header>
+              <font size="4">Aria Chernik, JD, PhD</font>
               <br/><em>Co-founder</em>
             </Header>
             <p>
@@ -140,11 +190,18 @@ export default (props: IndexPageProps) =>
               Her work is dedicated to catalyzing the power of open education to transform learning 
               and create a more participatory, egalitarian world.
             </p>
+            <div>
+              <Icon name="linkedin" color="blue" size="large" link onClick={handleClickAriaIn}></Icon>
+              <Icon name="twitter" color="blue" size="large" link onClick={handleClickAriaTwitter}></Icon>
+              <Icon name="globe" color="gray" size="large" link onClick={handleClickAriaWeb}></Icon>
+            </div>
           </Grid.Column>
           <Grid.Column>
-            <Header icon>
-              <Icon name="user"></Icon>
-              <font size="4"><a href="https://www.linkedin.com/in/tanner-johnson-4ba701b8/">Tanner Johnson</a></font>
+            <div>
+              <TannerImage />
+            </div>
+            <Header >
+              <font size="4">Tanner Johnson</font>
               <br/><em>Co-founder</em>
             </Header>
             <p>
@@ -152,11 +209,16 @@ export default (props: IndexPageProps) =>
               As a software engineer and <a href="https://us.fulbrightonline.org/">J. William Fulbright Scholar</a>, he’s interested in 
               personalizing and broadening access to education using technology.
             </p>
+            <div>
+              <Icon name="linkedin" color="blue" size="large" link onClick={handleClickTannerIn}></Icon>
+            </div>
           </Grid.Column>
           <Grid.Column>
-            <Header icon>
-              <Icon name="user"></Icon>
-              <font size="4"><a href="https://www.linkedin.com/in/gobluedevils/">Amy Jiang</a></font>
+            <div>
+              <AmyImage />
+            </div>
+            <Header >
+              <font size="4">Amy Jiang</font>
               <br/><em>Co-founder</em>
             </Header>
             <p>
@@ -164,17 +226,26 @@ export default (props: IndexPageProps) =>
               learning experiences for students. For this reason, she is currently pursuing 
               a Public Policy major at Duke and, more importantly, hanging out with middle school students!
                 </p>
+            <div>
+              <Icon name="linkedin" color="blue" size="large" link onClick={handleClickAmyIn}></Icon>
+            </div>
           </Grid.Column>
           <Grid.Column>
-            <Header icon>
-              <Icon name="user"></Icon>
-              <font size="4"><a href="https://www.linkedin.com/in/carterzenke/">Carter Zenke</a></font>
+            <div>
+              <CarterImage />
+            </div>
+            <Header >
+              <font size="4">Carter Zenke</font>
               <br/><em>Co-founder</em>
             </Header>
             <p>
               Carter is an <a href="https://today.duke.edu/2016/06/abduke16">Angier B. Duke Scholar</a> and Humanity in Action <a href="https://www.humanityinaction.org/programs/75-the-john-lewis-fellowship">John Lewis Fellow</a> 
               working to create a high-quality, equitable education for all students in the Digital Age.
                 </p>
+            <div>
+              <Icon name="linkedin" color="blue" size="large" link onClick={handleClickCarterIn}></Icon>
+              <Icon name="globe" color="gray" size="large" link onClick={handleClickCarterWeb}></Icon>
+            </div>
           </Grid.Column>
         </Grid.Row>
       </Grid>

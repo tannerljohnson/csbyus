@@ -23,7 +23,8 @@ exports.modifyWebpackConfig = ({config, stage}) => {
       test: /\.tsx?$/,
       loaders: [
         `babel-loader?${JSON.stringify({presets: ['babel-preset-env'], plugins: [extractQueryPlugin]})}`,
-        'ts-loader'
+        'ts-loader',
+        { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
       ]
     });
   }
