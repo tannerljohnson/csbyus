@@ -2,11 +2,19 @@ import * as React from "react";
 import Link from "gatsby-link";
 import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
 import { menuItems } from "../layouts";
-import * as Blog from './blog.tsx';
+import * as Blog from "./blog.tsx";
 // import ReactNative,{
 //   Alert,
 // } from 'react-native';
-import {ExampleImage, AriaImage, TannerImage, AmyImage, CarterImage, BackgroundImage} from "./ExampleImage.jsx";
+import {ExampleImage,
+  AriaImage,
+  TannerImage,
+  AmyImage,
+  CarterImage,
+  BackgroundImage,
+  YoutubePlaceholder,
+} from "../components/image-renders.jsx";
+
 import {
   Button,
   Segment,
@@ -16,6 +24,7 @@ import {
   Icon,
   Image,
   List,
+  Embed,
 } from "semantic-ui-react";
 
 interface IndexPageProps {
@@ -27,28 +36,25 @@ interface IndexPageProps {
 function handleClick(e) {
   e.preventDefault();
   // alert('The link was clicked.');
-  window.location.href = './contact'; 
-  // menuItems[3].dispatch;
+  window.location.href = "./contact";
 }
 
-const OurModelFlowChartImage = () => <Image src='/assets/images/OurModelFlowChartDiagram.png'/>
+const OurModelFlowChartImage = () => <Image src="/assets/images/OurModelFlowChartDiagram.png"/>;
 
 // Carter links
-const handleClickCarterIn = () => open('https://www.linkedin.com/in/carterzenke/');
-const handleClickCarterWeb = () => open('http://www.carterzenke.com/');
+const handleClickCarterIn = () => open("https://www.linkedin.com/in/carterzenke/");
+const handleClickCarterWeb = () => open("http://www.carterzenke.com/");
 
 // Tanner links
-const handleClickTannerIn = () => open('https://www.linkedin.com/in/tanner-johnson-4ba701b8/');
+const handleClickTannerIn = () => open("https://www.linkedin.com/in/tanner-johnson-4ba701b8/");
 
 // Amy links
-const handleClickAmyIn = () => open('https://www.linkedin.com/in/gobluedevils/');
+const handleClickAmyIn = () => open("https://www.linkedin.com/in/gobluedevils/");
 
 // Aria links
-const handleClickAriaIn = () => open('https://www.linkedin.com/in/aria-chernik-512065a8/');
-const handleClickAriaTwitter = () => open('https://twitter.com/ariachernik');
-const handleClickAriaWeb = () => open('http://ariachernik.com/');
-
-
+const handleClickAriaIn = () => open("https://www.linkedin.com/in/aria-chernik-512065a8/");
+const handleClickAriaTwitter = () => open("https://twitter.com/ariachernik");
+const handleClickAriaWeb = () => open("http://ariachernik.com/");
 
 export default (props: IndexPageProps) =>
   <div>
@@ -59,7 +65,7 @@ export default (props: IndexPageProps) =>
       />
       <Container fluid>
         <BackgroundImage/>
-        <div style={{position: 'absolute', bottom: 120, width: '100%', height: 'auto'}}>
+        <div style={{position: "absolute", bottom: 120, width: "100%", height: "auto"}}>
           <Container text>
             <Header inverted as="h1">CSby<b>Us</b></Header>
             <Header inverted as="h2">Expanding access to quality computer science education <br/>by students, for students</Header>
@@ -105,7 +111,7 @@ export default (props: IndexPageProps) =>
           <Grid.Column width="5" floated="right">
             {/* TODO replace with a pretty GIF */}
             <Header icon textAlign="center">
-              <Icon name="globe" color="green"></Icon>
+              <Icon name="globe" color="green"/>
               Support
             </Header>
               <p>
@@ -118,7 +124,8 @@ export default (props: IndexPageProps) =>
       <Container>
         <br/><br/><br/>
       <div style={{textAlign: "center", verticalAlign: "bottom"}}>
-        <iframe width="854" height="480" src="https://www.youtube.com/embed/wiKFYjAChok" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        {/*<iframe width="854" height="480" src="https://www.youtube.com/embed/wiKFYjAChok" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>*/}
+        <Embed id="wiKFYjAChok" placeholder="../components/youtubeImagePlaceholder.png" source="youtube" />
       </div>
       </Container>
     </Segment>

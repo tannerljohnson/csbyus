@@ -14,8 +14,8 @@ import { store } from "../store";
 export const menuItems = [
   { name: "Home", path: "/", exact: true, icon: "home", inverted: true },
   { name: "About", path: "/about-extended/", exact: true, icon: "info circle" },
-  { name: "Community", path: "/blog/", exact: false, icon: "newspaper" },
-  { name: "Contact", path: "/contact/", exact: true, icon: "phone" },
+  { name: "What We Do", path: "/what-we-do/", exact: false, icon: "newspaper" },
+  { name: "Join Us", path: "/contact/", exact: true, icon: "phone" },
 ];
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {

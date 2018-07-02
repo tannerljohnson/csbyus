@@ -9,23 +9,34 @@ const {kebabCase, uniq, get, compact, times} = require('lodash');
 const POSTS_PER_PAGE = 10;
 const cleanArray = arr => compact(uniq(arr));
 
+// TODO: Below is the ideal Babel based Webpack config mod
 // Add Gatsby's extract-graphql Babel plugin (we'll chain it with babel-loader)
-const extractQueryPlugin = path.resolve(
-  __dirname,
-  `node_modules/gatsby/dist/utils/babel-plugin-extract-graphql.js`
-);
+// const extractQueryPlugin = path.resolve(
+//   __dirname,
+//   `node_modules/gatsby/dist/utils/babel-plugin-extract-graphql.js`
+// );
 
 // Temporary workaround to ensure Gatsby builds minified, production build of React.
 // https://github.com/fabien0102/gatsby-starter/issues/39#issuecomment-343647558
+// exports.modifyWebpackConfig = ({config, stage}) => {
+//   if (stage === 'build-javascript') {
+//     config.loader('typescript', {
+//       test: /\.tsx?$/,
+//       loaders: [
+//         `babel-loader?${JSON.stringify({presets: ['babel-preset-env'], plugins: [extractQueryPlugin]})}`,
+//         'ts-loader',
+//         { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+//       ]
+//     });
+//   }
+// };
+
+// TODO: delete. temporary config workaround for prod build
 exports.modifyWebpackConfig = ({config, stage}) => {
-  if (stage === 'build-javascript') {
-    config.loader('typescript', {
-      test: /\.tsx?$/,
-      loaders: [
-        `babel-loader?${JSON.stringify({presets: ['babel-preset-env'], plugins: [extractQueryPlugin]})}`,
-        'ts-loader',
-        { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
-      ]
+  if (stage === 'build-html') {
+    config.loader('null', {
+      test: /bad-module/,
+      loader: 'null-loader'
     });
   }
 };
@@ -58,7 +69,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
     const templates = ['blogPost', 'tagsPage', 'blogPage']
       .reduce((mem, templateName) => {
         return Object.assign({}, mem,
-        {[templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`)});
+          {[templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`)});
       }, {});
 
     graphql(
@@ -101,7 +112,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
       posts
         .reduce((mem, post) =>
           cleanArray(mem.concat(get(post, 'frontmatter.tags')))
-        , [])
+          , [])
         .forEach(tag => {
           createPage({
             path: `/blog/tags/${kebabCase(tag)}/`,

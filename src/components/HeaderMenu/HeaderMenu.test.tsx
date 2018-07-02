@@ -9,9 +9,9 @@ configure({ adapter: new Adapter() });
 
 const items = [
   { name: "Home", path: "/", exact: true },
-  { name: "About", path: "/about/", exact: true },
-  { name: "Community", path: "/blog/", exact: false },
-  { name: "Contact", path: "/blog/", exact: false },
+  { name: "About", path: "/about-extended/", exact: true },
+  { name: "What We Do", path: "/what-we-do/", exact: false },
+  { name: "Join Us", path: "/contact/", exact: false },
 ];
 
 const LinkStub = (props: any) => <div {...props} />;

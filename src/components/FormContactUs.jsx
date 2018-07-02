@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Confirm } from 'semantic-ui-react';
 import { confirmAlert } from 'react-confirm-alert';
 // import request from '../../node_modules/superagent/superagent';
 
@@ -31,7 +31,12 @@ export class FormContactUs extends React.Component {
             submittedVolunteer: false,
             submittedShareResources: false,
             submittedOther: false,
-        }
+
+            open: false,
+    }
+    
+    open = () => this.setState({ open: true })
+    close = () => this.setState({ open: false })
 
     handleChange = (e, { name, value }) => {
         this.setState({ [name]: value })
@@ -40,7 +45,8 @@ export class FormContactUs extends React.Component {
         this.setState({ [name]: !value });
     }
 
-    handleSubmit = () => {
+    handleConfirmSubmit = () => {
+        // render confirmation pop-up        
         const { firstName, lastName, email, comments, mentor, newSchool, sponsor, volunteer, shareResources, other } = this.state
         this.setState({ 
             submittedFirstName: firstName, 
@@ -52,7 +58,8 @@ export class FormContactUs extends React.Component {
             submittedSponsor: sponsor,
             submittedVolunteer: volunteer, 
             submittedShareResources: shareResources,
-            submittedOther: other 
+            submittedOther: other,
+            open: false,     
         });
         this.setState({ 
             firstName: '', 
@@ -86,8 +93,9 @@ export class FormContactUs extends React.Component {
             body: data,
         });
 
-        // thank you pop-up
-        alert('thank you!');
+        // return to home page
+        window.location.href = '/'; 
+
     }
 
     render() {
@@ -137,8 +145,10 @@ export class FormContactUs extends React.Component {
                     name='comments'
                     value={comments}
                     onChange={this.handleChange}/>
-                <Form.Button>Submit</Form.Button>
+                <Form.Button onClick={this.open}>Submit</Form.Button>
             </Form>
+            <Confirm open={this.state.open} onCancel={this.close} onConfirm={this.handleConfirmSubmit} />
+
             {/*<strong>onChange:</strong>
             <pre>{JSON.stringify({ firstName, lastName, email, comments, mentor, 
                 newSchool, sponsor, volunteer, shareResources, other }, null, 10)}

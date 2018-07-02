@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Header, Container, Segment, Icon, Button } from "semantic-ui-react";
-import { FormContactUs } from './FormContactUs.jsx';
+import { FormContactUs } from "../components/FormContactUs.jsx";
 
 export default () => {
   return (
