@@ -6,6 +6,8 @@ import aria from './aria.jpg';
 import tanner from './tanner.png';
 import amy from './amy.png';
 import carter from './carter.jpg';
+import impactChart from './impact_chart.png';
+import roadmapToAnApp from './roadmapToAnApp.png';
 // Import background from './background_image.jpg';
 import youtubePlaceholder from './youtubeImagePlaceholder.png';
 
@@ -58,6 +60,22 @@ export class CarterImage extends React.Component {
   render() {
     return (
       <Image circular centered size="small" src={carter}/>
+    );
+  }
+}
+
+export class ImpactChart extends React.Component {
+  render() {
+    return (
+      <Image centered src={impactChart}/>
+    );
+  }
+}
+
+export class RoadmapToAnApp extends React.Component {
+  render() {
+    return (
+      <Image centered src={roadmapToAnApp}/>
     );
   }
 }

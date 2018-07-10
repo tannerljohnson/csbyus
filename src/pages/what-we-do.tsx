@@ -7,11 +7,11 @@ export default () => {
     <Container>
         <Segment>
             <Container style={{padding: "30px"}}>
-                <Header as='h2' size='huge' icon textAlign='center' >
-                <Icon name='users' circular />
+                <Header as="h2" size="huge" icon textAlign="center" >
+                <Icon name="users" circular />
                     <Header.Content>What We Do</Header.Content>
                 </Header>
-                <Header as='h3' textAlign='center' >
+                <Header as="h3" textAlign="center" >
                     <Header.Content>
                         The mission of CSbyUs is to ignite future change-agents by providing quality <br/>computer science education
                         to students from under-resourced communities. 
@@ -22,30 +22,30 @@ export default () => {
                 <Grid columns="3" textAlign="center" divided relaxed stackable className="container" style={{color: "gray"}}>
                     <Grid.Row> 
                         <Grid.Column>
-                            <Icon name="pencil alternate" size='huge' style={{color: "#e91e63"}}></Icon>
+                            <Icon name="pencil alternate" size="huge" style={{color: "#e91e63"}}></Icon>
                             <Header >
                                 <font size="4">The Problem</font>
                             </Header>
                               <Button icon fluid basic href="#problem">
-                                <Icon name='angle down' />
+                                <Icon name="angle down" />
                             </Button>
                         </Grid.Column>
                         <Grid.Column>
-                            <Icon name="lightbulb outline" size='huge' style={{color: "#e91e63"}}></Icon>
+                            <Icon name="lightbulb outline" size="huge" style={{color: "#e91e63"}}></Icon>
                             <Header >
                                 <font size="4">The Solution</font>
                             </Header>
                             <Button icon fluid basic>
-                                <Icon name='angle down' />
+                                <Icon name="angle down" />
                             </Button>
                         </Grid.Column>
                         <Grid.Column>
-                            <Icon name="users" size='huge' style={{color: "#e91e63"}}></Icon>
+                            <Icon name="users" size="huge" style={{color: "#e91e63"}}></Icon>
                             <Header >
                                 <font size="4">Our Impact</font>
                             </Header>
                             <Button icon fluid basic>
-                                <Icon name='angle down' />
+                                <Icon name="angle down" />
                             </Button>
                         </Grid.Column>
                     </Grid.Row>
@@ -53,30 +53,30 @@ export default () => {
             </Segment>
       </Segment>
       <Segment name="problem">
-            <Header as='h2' textAlign='center'>
+            <Header as="h2" textAlign="center">
                 <Header.Content>The Problem</Header.Content>
             </Header>
-            <Header as='h3' textAlign='center'>
+            <Header as="h3" textAlign="center">
                 <Header.Content>
                     These are all the problems and their rationale. 
                 </Header.Content>
             </Header>
       </Segment>
         <Segment >
-            <Header as='h2' textAlign='center'>
+            <Header as="h2" textAlign="center">
                 <Header.Content>The Solution</Header.Content>
             </Header>
-            <Header as='h3' textAlign='center'>
+            <Header as="h3" textAlign="center">
                 <Header.Content>
                     These are all the solutions and their rationale. 
                 </Header.Content>
             </Header>
       </Segment>
         <Segment >
-            <Header as='h2' textAlign='center'>
+            <Header as="h2" textAlign="center">
                 <Header.Content>Our Impact</Header.Content>
             </Header>
-            <Header as='h3' textAlign='center'>
+            <Header as="h3" textAlign="center">
                 <Header.Content>
                     Here are all the ways we're making an impact. 
                 </Header.Content>

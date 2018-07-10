@@ -13,6 +13,8 @@ import {ExampleImage,
   CarterImage,
   BackgroundImage,
   YoutubePlaceholder,
+  ImpactChart,
+  RoadmapToAnApp,
 } from "../components/image-renders.jsx";
 
 import {
@@ -63,8 +65,8 @@ export default (props: IndexPageProps) =>
       <HeaderMenu
         Link={Link} pathname={props.location.pathname} items={menuItems} inverted
       />
-      <Container fluid>
-        <BackgroundImage/>
+      <Container image fluid>
+        <BackgroundImage />
         <div style={{position: "absolute", bottom: 120, width: "100%", height: "auto"}}>
           <Container text>
             <Header inverted as="h1">CSby<b>Us</b></Header>
@@ -92,28 +94,27 @@ export default (props: IndexPageProps) =>
       </div>
     </Container>
 
-      
-      <Grid stackable verticalAlign="top" className="container">
+      <Grid stackable verticalAlign="top" className="container" columns="3">
         <Grid.Row>
           <Grid.Column width="5">
             <Header icon textAlign="center">
               <Icon name="wrench" style={{color: "#e91e63"}}></Icon>
               Customize
             </Header>
-              <p>
-                Adapt existing open-access CS curricula (like Code.org CS Discoveries and Google CS First) 
-                to meet the unique learning needs of local communities
-              </p>
+              <Container textAlign='center'>
+                <font size="4">Adapt existing open-access CS curricula (like Code.org CS Discoveries and Google CS First) 
+                to meet the unique learning needs of local communities</font>
+              </Container>
           </Grid.Column>
           <Grid.Column width="5" floated="right">
             <Header icon textAlign="center">
               <Icon name="user" color="blue"></Icon>
               Deploy
             </Header>
-              <p>
-                Volunteer to teach the adapted curricula in local middle and high schools and after school 
-                programs with deep attention to assessment
-              </p>
+              <Container textAlign='center'>
+                <font size="4">Volunteer to teach the adapted curricula in local middle and high schools and after school 
+                programs with deep attention to assessment</font>
+              </Container>
           </Grid.Column>
 
           <Grid.Column width="5" floated="right">
@@ -122,10 +123,10 @@ export default (props: IndexPageProps) =>
               <Icon name="globe" color="green"/>
               Support
             </Header>
-              <p>
-                Provide teacher training materials, maintain an online community of current 
-                and former teachers and students, and host an annual CSbyUs summit
-              </p>
+            <Container textAlign='center'>
+              <font size="4">Provide teacher training materials, maintain an online community of current 
+                and former teachers and students, and host an annual CSbyUs summit</font>
+              </Container>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -133,13 +134,13 @@ export default (props: IndexPageProps) =>
     </Segment>
 
     {/* Our model */}
-    <Segment inverted secondary vertical className="stripe">
+    <Segment inverted tertiary vertical className="stripe">
       <Container text>
         <Header as="h1" textAlign="center">
           Learning Model <br/><br/>
         </Header>
       </Container>
-      <Container text textAlign='center'>
+      <Container text textAlign="center">
       <p>
         CSbyUs supports a network of undergraduate students to customize and deploy CS curricula to middle school 
         students in their area. We further harness the uniqueness of our learners by delivering curricula that is: 
@@ -153,52 +154,42 @@ export default (props: IndexPageProps) =>
     <Segment vertical className="stripe">
       <Container text>
         <Header as="h1" textAlign="center">
-          Impact <br/><br/>
+          Our Impact <br/>
         </Header>
+        <Container image>
+          <ImpactChart/> <br/><br/><br/>
+        </Container>
       </Container>
-      <Grid columns="3" textAlign="center" divided relaxed stackable className="container" style={{color: "gray"}}>
+      <Grid columns="3" textAlign="center" divided relaxed stackable className="container" >
         <Grid.Row>
           <Grid.Column >
-            <p>
-              XX%
-            </p>
-            <Header>
-              <font size="4">Aria Chernik, JD, PhD</font>
-              <br/><em>Co-founder</em>
+            <Header as="h1">
+              <font size="10">40</font><br/>
+              <font size="4">Public school students engaged</font>
             </Header>
             <p>
-              Aria is founder and director of <a href="https://ospri.ssri.duke.edu/">OSPRI</a> 
-               and a lecturing fellow in the Social Science Research Institute at Duke University. 
-              Her work is dedicated to catalyzing the power of open education to transform learning 
-              and create a more participatory, egalitarian world.
+              We partner with public schools or existing after-school programs to provide high quality computer science education to students.
+              Currently based in Durham, we are expanding across North Carolina and beyond. 
             </p>
           </Grid.Column>
           <Grid.Column>
-            <p>
-              $XX,XXX
-            </p>
-            <Header >
-              <font size="4">Tanner Johnson</font>
-              <br/><em>Co-founder</em>
+            <Header as="h1">
+              <font size="10">100%</font><br/>
+              <font size="4">Students believe they can learn CS</font>
             </Header>
             <p>
-              Tanner is a Duke University graduate, where he co-founded <a href="https://www.facebook.com/mobilecitizens/">Mobile Citizens</a>. 
-              As a software engineer and <a href="https://us.fulbrightonline.org/">J. William Fulbright Scholar</a>, he’s interested in 
-              personalizing and broadening access to education using technology.
+              Our largest mark of success is an improvement in self-efficacy. Students who believe they have the ability to learn computer science
+              are more likely to continue learning with confidence. 
             </p>
           </Grid.Column>
           <Grid.Column>
-            <p>
-              X
-            </p>
-            <Header >
-              <font size="4">Amy Jiang</font>
-              <br/><em>Co-founder</em>
+            <Header as="h1">
+              <font size="10">13</font><br/>
+              <font size="4">College mentors</font>
             </Header>
             <p>
-              Amy is interested in understanding how systems, together, can create better 
-              learning experiences for students. For this reason, she is currently pursuing 
-              a Public Policy major at Duke and, more importantly, hanging out with middle school students!
+              Near-peer mentorship is our secret sauce. Our findings show that students develop meaningful relationships with their mentors,
+              which combined with their technical experience, results in final products students are proud of.   
             </p>
           </Grid.Column>
         
@@ -210,7 +201,7 @@ export default (props: IndexPageProps) =>
     <Segment vertical className="stripe alternate feature">
       <Container text>
         <Header as="h1" textAlign="center">
-         Meet the team <br/><br/>
+         Meet The Team <br/><br/>
         </Header>
       </Container>
       <Grid columns="4" textAlign="center" divided relaxed stackable className="container" style={{color: "gray"}}>

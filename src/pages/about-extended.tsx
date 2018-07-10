@@ -4,11 +4,12 @@ import { Header, Container, Segment, Icon, Grid } from "semantic-ui-react";
 export default () => {
   return (
     <Container>
-        <Segment vertical>
-          <Header as='h1' textAlign='center'>
+      <Segment.Group vertical>
+        <Segment inverted secondary>
+          <Header as="h1" textAlign="center">
               <Header.Content><br/>About Us</Header.Content>
           </Header>
-          <Header as='h4' textAlign='center'>
+          <Header as="h4" textAlign="center">
               <Header.Content>
                  Founded in 2017 at Duke University, CSbyUs exists to broaden participation
                  in computer science.  <br/> We believe in equality of voice and that
@@ -17,33 +18,34 @@ export default () => {
               </Header.Content>
           </Header>
         </Segment>
-      <Segment inverted secondary>
-        <Grid stackable verticalAlign="top" className="container" columns="2" divided>
-          <Grid.Row>
-            <Grid.Column >
-              <Header icon inverted textAlign="center">
-                <Icon name="wrench" style={{color: "#e91e63"}}></Icon>
-                Our Mission
-              </Header>
-                <p>
-                <font size="3.5" textAlign="center">The mission of CSbyUs is to ignite future change-agents by providing quality computer science education to students from under-resourced communities.</font>
-                </p>
-            </Grid.Column>
-            <Grid.Column  floated="right">
-              <Header icon inverted textAlign="center">
-                <Icon name="user" color="blue"></Icon>
-                Our Vision
-              </Header>
-                <p>
-                <font size="3.5">CSbyUs envisions an educational system in which all students are empowered to learn computer science in a way that is relevant to their lives.</font>
-                </p>
-            </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
+        <Segment >
+          <Grid stackable verticalAlign="top" className="container" columns="2" divided>
+            <Grid.Row>
+              <Grid.Column >
+                <Header icon  textAlign="center">
+                  <Icon name="wrench" style={{color: "#e91e63"}}></Icon>
+                  Our Mission
+                </Header>
+                  <p>
+                  <font size="3.5" textAlign="center">The mission of CSbyUs is to ignite future change-agents by providing quality computer science education to students from under-resourced communities.</font>
+                  </p>
+              </Grid.Column>
+              <Grid.Column  floated="right">
+                <Header icon  textAlign="center">
+                  <Icon name="user" color="blue"></Icon>
+                  Our Vision
+                </Header>
+                  <p>
+                  <font size="3.5">CSbyUs envisions an educational system in which all students are empowered to learn computer science in a way that is relevant to their lives.</font>
+                  </p>
+              </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Segment>
+        {/* </Segment.Group> */}
 
-        <Segment vertical>
-          <Header as='h1' textAlign='center'>
+        <Segment vertical inverted tertiary>
+          <Header as="h1" textAlign="center">
               <Header.Content><Icon name="heart"/>Our Story </Header.Content>
           </Header>
         </Segment>
@@ -69,19 +71,8 @@ export default () => {
             CS education with our first curriculum, Mobile Citizens, and we believe that CSbyUs can empower more undergraduates to do the same.</font> 
         </p>
       </Segment>
-      <Segment vertical>
-          <Header as='h1' textAlign='center'>
-              <Header.Content><Icon name="globe"/>Learning Model </Header.Content>
-          </Header>
-        </Segment>
-    <Segment vertical>
-      <p>
-        <font size="3.5">CSbyUs supports a network of undergraduate students to customize and deploy CS curricula to middle school 
-        students in their area. We further harness the uniqueness of our learners by delivering curricula that is: 
-        1) <b>student-centered</b> 2) <b>project-based</b> and 3) informed by <b>design thinking</b>. CSbyUs enables CS to be taught by students, 
-        for students.</font> 
-      </p>
-      </Segment>
+      </Segment.Group>
+
     </Container>
   );
 };
