@@ -81,9 +81,17 @@ export default (props: IndexPageProps) =>
  
     {/* About this starter */}
     <Segment vertical className="stripe">
-      <Container text textAlign="center">
-        <Header as="h1">What we do<br/><br/></Header>
+    <Container text textAlign="center">
+        <Header as="h1" size="massive">What we do<br/><br/></Header>
       </Container>
+    <Container>
+      <div style={{textAlign: "center", verticalAlign: "bottom"}}>
+        {/*<iframe width="854" height="480" src="https://www.youtube.com/embed/wiKFYjAChok" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>*/}
+        <Embed id="wiKFYjAChok" placeholder="https://farm1.staticflickr.com/835/29437860478_583cfb491c_b.jpg" source="youtube" />
+        <br/><br/>
+      </div>
+    </Container>
+
       
       <Grid stackable verticalAlign="top" className="container">
         <Grid.Row>
@@ -121,39 +129,24 @@ export default (props: IndexPageProps) =>
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <Container>
-        <br/><br/><br/>
-      <div style={{textAlign: "center", verticalAlign: "bottom"}}>
-        {/*<iframe width="854" height="480" src="https://www.youtube.com/embed/wiKFYjAChok" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>*/}
-        <Embed id="wiKFYjAChok" placeholder="../components/youtubeImagePlaceholder.png" source="youtube" />
-      </div>
-      </Container>
+
     </Segment>
 
     {/* Our model */}
-    <Segment vertical className="stripe">
+    <Segment inverted secondary vertical className="stripe">
       <Container text>
         <Header as="h1" textAlign="center">
-          Our Model <br/><br/>
+          Learning Model <br/><br/>
         </Header>
       </Container>
-      <Grid stackable verticalAlign="top" className="container">
-        <Grid.Row>
-          <Grid.Column width="8" center textAlign="center">
-            <p>
-              CSbyUs combines a personalized learning model with the power of 
-              21st century information technology to expand access to high-impact 
-              computer science education and close the diversity gap in STEM fields. 
-              CSbyUs supports networks of undergraduate students to customize existing 
-              open-access CS curricula to meet the needs of local learning communities and 
-              deploy their new open-source curricula in middle and high schools and after school programs.
-            </p>
-          </Grid.Column>
-          <Grid.Column width="8" floated="right" textAlign="center">
-            <ExampleImage />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <Container text textAlign='center'>
+      <p>
+        CSbyUs supports a network of undergraduate students to customize and deploy CS curricula to middle school 
+        students in their area. We further harness the uniqueness of our learners by delivering curricula that is: 
+        1) <b>student-centered</b> 2) <b>project-based</b> and 3) informed by <b>design thinking</b>. CSbyUs enables CS to be taught by students, 
+        for students.
+      </p>
+      </Container>
     </Segment>
 
     {/* Impact */}
@@ -163,13 +156,52 @@ export default (props: IndexPageProps) =>
           Impact <br/><br/>
         </Header>
       </Container>
-      <Grid stackable verticalAlign="top" className="container">
+      <Grid columns="3" textAlign="center" divided relaxed stackable className="container" style={{color: "gray"}}>
         <Grid.Row>
-          <Grid.Column width="full">
+          <Grid.Column >
             <p>
-              [Here is some persuasive information about our impact so far.]
+              XX%
+            </p>
+            <Header>
+              <font size="4">Aria Chernik, JD, PhD</font>
+              <br/><em>Co-founder</em>
+            </Header>
+            <p>
+              Aria is founder and director of <a href="https://ospri.ssri.duke.edu/">OSPRI</a> 
+               and a lecturing fellow in the Social Science Research Institute at Duke University. 
+              Her work is dedicated to catalyzing the power of open education to transform learning 
+              and create a more participatory, egalitarian world.
             </p>
           </Grid.Column>
+          <Grid.Column>
+            <p>
+              $XX,XXX
+            </p>
+            <Header >
+              <font size="4">Tanner Johnson</font>
+              <br/><em>Co-founder</em>
+            </Header>
+            <p>
+              Tanner is a Duke University graduate, where he co-founded <a href="https://www.facebook.com/mobilecitizens/">Mobile Citizens</a>. 
+              As a software engineer and <a href="https://us.fulbrightonline.org/">J. William Fulbright Scholar</a>, he’s interested in 
+              personalizing and broadening access to education using technology.
+            </p>
+          </Grid.Column>
+          <Grid.Column>
+            <p>
+              X
+            </p>
+            <Header >
+              <font size="4">Amy Jiang</font>
+              <br/><em>Co-founder</em>
+            </Header>
+            <p>
+              Amy is interested in understanding how systems, together, can create better 
+              learning experiences for students. For this reason, she is currently pursuing 
+              a Public Policy major at Duke and, more importantly, hanging out with middle school students!
+            </p>
+          </Grid.Column>
+        
         </Grid.Row>
       </Grid>
     </Segment>

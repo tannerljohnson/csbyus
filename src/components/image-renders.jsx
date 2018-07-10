@@ -6,7 +6,7 @@ import aria from './aria.jpg';
 import tanner from './tanner.png';
 import amy from './amy.png';
 import carter from './carter.jpg';
-import background from './background_image.jpg';
+// Import background from './background_image.jpg';
 import youtubePlaceholder from './youtubeImagePlaceholder.png';
 
 console.log(diagram);
@@ -65,7 +65,12 @@ export class CarterImage extends React.Component {
 export class BackgroundImage extends React.Component {
   render() {
     return (
-      <Image backgrounded centered fluid dimmer src={background}/>
+      <Image backgrounded wrapped centered fluid dimmer src={'https://farm1.staticflickr.com/925/42589893674_f6494a86b0_b.jpg'}/>
+    //   <Embed
+    //   icon='right circle arrow'
+    //   placeholder='https://farm1.staticflickr.com/925/42589893674_f6494a86b0_b.jpg'
+    //   url='https://www.csbyus.org'
+    // />
     );
   }
 }

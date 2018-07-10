@@ -13,7 +13,7 @@ export default () => {
                 </Header>
                 <Header as='h3' textAlign='center' >
                     <Header.Content>
-                        The mission of CSbyUs is to ignite future change-agents by providing quality computer science education
+                        The mission of CSbyUs is to ignite future change-agents by providing quality <br/>computer science education
                         to students from under-resourced communities. 
                     </Header.Content>
                 </Header>

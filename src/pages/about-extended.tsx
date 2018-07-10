@@ -1,19 +1,52 @@
 import * as React from "react";
-import { Header, Container, Segment, Icon } from "semantic-ui-react";
+import { Header, Container, Segment, Icon, Grid } from "semantic-ui-react";
 
 export default () => {
   return (
     <Container>
-      <Segment vertical>
-        <Container>
-          <Header as="h1" textAlign='center'>
-            <Icon name="heart" />
-            <Header.Content textAlign='center'>
-              Our Story
-            </Header.Content>
+        <Segment vertical>
+          <Header as='h1' textAlign='center'>
+              <Header.Content><br/>About Us</Header.Content>
           </Header>
-        </Container>
-      </Segment>
+          <Header as='h4' textAlign='center'>
+              <Header.Content>
+                 Founded in 2017 at Duke University, CSbyUs exists to broaden participation
+                 in computer science.  <br/> We believe in equality of voice and that
+                 each and every student can be an agent of change in their communities. <br/> We equip students from underserved communities
+                 to share their voices by harnessinig the power of community and computer science.  
+              </Header.Content>
+          </Header>
+        </Segment>
+      <Segment inverted secondary>
+        <Grid stackable verticalAlign="top" className="container" columns="2" divided>
+          <Grid.Row>
+            <Grid.Column >
+              <Header icon inverted textAlign="center">
+                <Icon name="wrench" style={{color: "#e91e63"}}></Icon>
+                Our Mission
+              </Header>
+                <p>
+                <font size="3.5" textAlign="center">The mission of CSbyUs is to ignite future change-agents by providing quality computer science education to students from under-resourced communities.</font>
+                </p>
+            </Grid.Column>
+            <Grid.Column  floated="right">
+              <Header icon inverted textAlign="center">
+                <Icon name="user" color="blue"></Icon>
+                Our Vision
+              </Header>
+                <p>
+                <font size="3.5">CSbyUs envisions an educational system in which all students are empowered to learn computer science in a way that is relevant to their lives.</font>
+                </p>
+            </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+
+        <Segment vertical>
+          <Header as='h1' textAlign='center'>
+              <Header.Content><Icon name="heart"/>Our Story </Header.Content>
+          </Header>
+        </Segment>
       <Segment vertical>
         <p>
           <font size="3.5">Our story begins in Durham, North Carolina, a community home to one of the most robust tech industries and least accessible 
@@ -36,14 +69,11 @@ export default () => {
             CS education with our first curriculum, Mobile Citizens, and we believe that CSbyUs can empower more undergraduates to do the same.</font> 
         </p>
       </Segment>
-    <Segment vertical>
-        <Header as="h1">
-          <Icon name="globe" />
-          <Header.Content>
-            Learning Model
-          </Header.Content>
-        </Header>
-    </Segment>
+      <Segment vertical>
+          <Header as='h1' textAlign='center'>
+              <Header.Content><Icon name="globe"/>Learning Model </Header.Content>
+          </Header>
+        </Segment>
     <Segment vertical>
       <p>
         <font size="3.5">CSbyUs supports a network of undergraduate students to customize and deploy CS curricula to middle school 
