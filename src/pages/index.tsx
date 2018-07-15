@@ -101,7 +101,7 @@ export default (props: IndexPageProps) =>
               <Icon name="wrench" style={{color: "#e91e63"}}></Icon>
               Customize
             </Header>
-              <Container textAlign='center'>
+              <Container textAlign="center">
                 <font size="4">Adapt existing open-access CS curricula (like Code.org CS Discoveries and Google CS First) 
                 to meet the unique learning needs of local communities</font>
               </Container>
@@ -111,7 +111,7 @@ export default (props: IndexPageProps) =>
               <Icon name="user" color="blue"></Icon>
               Deploy
             </Header>
-              <Container textAlign='center'>
+              <Container textAlign="center">
                 <font size="4">Volunteer to teach the adapted curricula in local middle and high schools and after school 
                 programs with deep attention to assessment</font>
               </Container>
@@ -123,7 +123,7 @@ export default (props: IndexPageProps) =>
               <Icon name="globe" color="green"/>
               Support
             </Header>
-            <Container textAlign='center'>
+            <Container textAlign="center">
               <font size="4">Provide teacher training materials, maintain an online community of current 
                 and former teachers and students, and host an annual CSbyUs summit</font>
               </Container>
@@ -134,7 +134,7 @@ export default (props: IndexPageProps) =>
     </Segment>
 
     {/* Our model */}
-    <Segment inverted tertiary vertical className="stripe">
+    <Segment inverted secondary vertical className="stripe">
       <Container text>
         <Header as="h1" textAlign="center">
           Learning Model <br/><br/>
